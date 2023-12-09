@@ -1,0 +1,7 @@
+Props
+jab koi chiz export default se nahi aati hai
+syntax: import {a} from './filename'
+a is the same variable as in filename
+jab koi chiz export default se aati hai
+syntax: import a from './filename'
+variable name different ho sakta hai
