@@ -10,12 +10,12 @@ export default function page() {
   if(mode==='white')
   {
     setMode('black');
-    document.body.style.backgroundColor='black';
+    document.body.style.backgroundColor='#131773';
 
   }
   else{
     setMode('white');
-    document.body.style.backgroundColor='white';
+    document.body.style.backgroundColor='gray';
   }
 }
   return (
@@ -23,7 +23,7 @@ export default function page() {
       <Navbar title="TextUtils" className={`bg-${mode}`}mode={mode} toggleMode={toggleMode}/>
       {/*<About/>*/}
       <div className="ml-4 mt-8  p-4">
-      {/*<Textform/>*/}
+      <Textform mode={mode}/>
       </div>
     </div>
   )
