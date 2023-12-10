@@ -10,10 +10,12 @@ export default function page() {
   if(mode==='white')
   {
     setMode('black');
+    document.body.style.backgroundColor='black';
 
   }
   else{
     setMode('white');
+    document.body.style.backgroundColor='white';
   }
 }
   return (
