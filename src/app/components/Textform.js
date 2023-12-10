@@ -1,6 +1,6 @@
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+
 import React , {useState} from 'react'
-export default function Example() {
+export default function Example(props) {
     const handleUpClick=()=>{
         let newText=text.toUpperCase();
         setText(newText)
@@ -38,7 +38,7 @@ export default function Example() {
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               
               <div className="col-span-full">
-                <label htmlFor="about" className="block text-lg font-medium leading-6 text-white-900">
+                <label htmlFor="about" className={`block text-lg font-medium leading-6 text-${props.mode === 'white'?'black':'white'}`}>
                  Enter text to Analyze 
                 </label>
                 <div className="mt-2">
@@ -60,11 +60,11 @@ export default function Example() {
        <button className='bg-blue-500 text-white px-4 py-2 ml-4 rounded-md' onClick={handleLoClick}>Convert to lowercase</button>
        <button className='bg-blue-500 text-white px-4 py-2 ml-4 rounded-md' onClick={handleCaClick}>Convert to camelCase</button>
        <div className='mt-2' >
-        <p>Your Text Summary</p>
-        <p>{text.split(' ').length-1} words,{text.length} characters</p>
-        <p>{0.008*(text.split(' ').length-1)} minutes read</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <p className={`text-${props.mode === 'white'?'black':'white'}`}>Your Text Summary</p>
+        <p className={`text-${props.mode === 'white'?'black':'white'}`}>{text.split(' ').length-1} words,{text.length} characters</p>
+        <p className={`text-${props.mode === 'white'?'black':'white'}`}>{0.008*(text.split(' ').length-1)} minutes read</p>
+        <h2 className={`text-${props.mode === 'white'?'black':'white'}`}>Preview</h2>
+        <p className={`text-${props.mode === 'white'?'black':'white'}`}>{text.length>0?text:"Enter something to preview"}</p>
         </div>  
       </div>
     )
