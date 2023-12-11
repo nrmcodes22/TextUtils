@@ -9,18 +9,20 @@ export default function page() {
   const toggleMode=()=>{
   if(mode==='white')
   {
-    setMode('black');
     document.body.style.backgroundColor='#131773';
+    setMode('black');
+
 
   }
   else{
-    setMode('white');
     document.body.style.backgroundColor='gray';
+    setMode('white');
+
   }
 }
   return (
     <div>
-      <Navbar title="TextUtils" className={`bg-${mode}`}mode={mode} toggleMode={toggleMode}/>
+      <Navbar className={`bg-${mode}`} title="TextUtils"  mode={mode} toggleMode={toggleMode}/>
       {/*<About/>*/}
       <div className="ml-4 mt-8  p-4">
       <Textform mode={mode}/>
